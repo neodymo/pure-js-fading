@@ -1,4 +1,5 @@
 const fadeInOut = (element, timing, limit = 1, callback) => {
+    if(parseFloat(element.style.opacity) > 0 && parseFloat(element.style.opacity) < limit) return false;
     if(timing > 0) {
         if(element.checkVisibility({ checkVisibilityCSS: true })) return false;
         element.style.visibility = "visible";
